@@ -13,12 +13,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    - run: npm install
+    - run: npm run build
     - name: Validate HTML
       id: validate-html
       uses: webtech-network/web-code-autograding@v1
       with:
         test-name: Validate HTML
-        setup-command: npm install && npm run build
+        setup-command: npm install
         command: npm test validateHTML.test.js
         procedure: validateHTMLFile
         timeout: 10
