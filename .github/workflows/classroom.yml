@@ -18,7 +18,7 @@ jobs:
       uses: webtech-network/web-code-autograding@v1
       with:
         test-name: Validate HTML
-        setup-command: npm install
+        setup-command: npm install && npm run build
         command: npm test validateHTML.test.js
         procedure: validateHTMLFile
         timeout: 10
