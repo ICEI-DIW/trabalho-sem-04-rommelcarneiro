@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log ("Validator from Trabalho")
-
 const validateHTML = require('./validateHTML');
 const validateCSS = require('./validateCSS');
 const validateJS = require('./validateJS');
