@@ -37,6 +37,6 @@ runs:
       working-directory: ${{ github.workspace }}
 
     - name: "Executa testes"
-      run: './dist/command/main.js'
+      run: 'node ./dist/command/main.js'
       shell: bash
       working-directory: ${{ github.workspace }}
