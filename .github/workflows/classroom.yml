@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Validate HTML
       id: validate-html
-      uses: ./.github/actions/action-command-grader
+      uses: ./.github/actions/action-command-grader.yml
       with:
         test-name: Validate HTML
         setup-command: npm install
@@ -24,7 +24,7 @@ jobs:
         timeout: 10
         max-score: 100
     - name: Autograding Reporter
-      uses: ./.github/actions/action-reporter-grader
+      uses: ./.github/actions/action-reporter-grader.yml
       env:
         VALIDATE-HTML_RESULTS: "${{steps.validate-html.outputs.result}}"
       with:
