@@ -28,5 +28,15 @@ outputs:
   result:
     description: "Outputs the result of the grader, indicating the success or failure of the test."
 runs:
-  using: 'node20'
-  main: '${{ github.workspace }}/dist/command/main.js'
+  using: "composite"
+  steps:
+    - name: "Instala dependências"
+      run: ${{ inputs.setup-command }}
+      shell: bash
+      # Ajuste aqui para rodar na raiz do repositório:
+      working-directory: ${{ github.workspace }}
+
+    - name: "Executa testes"
+      run: './dist/command/main.js'
+      shell: bash
+      working-directory: ${{ github.workspace }}
