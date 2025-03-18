@@ -16,6 +16,7 @@ jobs:
     - name: Validate HTML
       id: validate-html
       uses: ./.github/actions/command-grader-action
+      working-directory: ${{ github.workspace }}
       with:
         test-name: Validate HTML
         setup-command: npm install
