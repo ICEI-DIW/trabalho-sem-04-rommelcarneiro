@@ -13,5 +13,15 @@ inputs:
     required: true
 
 runs:
-  using: "node20"
-  main: "${{ github.workspace }}/dist/reporter/main.js"
+  using: "composite"
+  steps:
+    - name: "Instala dependências"
+      run: ${{ inputs.setup-command }}
+      shell: bash
+      # Ajuste aqui para rodar na raiz do repositório:
+      working-directory: ${{ github.workspace }}
+
+    - name: "Executa testes"
+      run: './dist/command/main.js'
+      shell: bash
+      working-directory: ${{ github.workspace }}
