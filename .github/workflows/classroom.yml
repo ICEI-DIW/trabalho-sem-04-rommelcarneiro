@@ -44,4 +44,4 @@ jobs:
       env:
         VALIDATE-HTML_RESULTS: "${{steps.validate-html.outputs.result}}"
       with:
-        runners: validate-html, validate-css
+        runners: validate-html,validate-css
