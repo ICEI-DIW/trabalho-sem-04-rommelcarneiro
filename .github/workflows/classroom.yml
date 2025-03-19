@@ -21,7 +21,7 @@ jobs:
         # setup-command: npm install
         # command: npm test validateGIT.test.js
         # command-type: cmd
-        command: validateGITFile
+        command: validateGITRepo
         command-type: function
         weight: 20
         timeout: 10
