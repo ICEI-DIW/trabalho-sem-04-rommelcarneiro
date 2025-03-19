@@ -49,7 +49,7 @@ jobs:
         # command-type: cmd
         command: validateCSSFile
         command-type: function
-        weight: 20
+        weight: 40
         timeout: 10
         max-score: 100
     - name: Autograding Reporter
