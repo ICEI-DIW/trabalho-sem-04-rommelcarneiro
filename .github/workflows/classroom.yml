@@ -69,6 +69,7 @@ jobs:
         # VALIDATE-GIT_RESULTS: "${{steps.validate-git.outputs.result}}"
         VALIDATE-HTML_RESULTS: "${{steps.validate-html.outputs.result}}"
         VALIDATE-CSS_RESULTS: "${{steps.validate-css.outputs.result}}"
+        VALIDATE-CSS2_RESULTS: "${{steps.validate-css2.outputs.result}}"
       with:
         # runners: validate-git,validate-html,validate-css
         runners: validate-html,validate-css,validate-css2
