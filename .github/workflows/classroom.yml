@@ -15,8 +15,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Validate HTML
       id: validate-html
-      uses: ./.github/actions/command-grader-action
-      working-directory: ${{ github.workspace }}
+      uses: webtech-network/web-code-autograding/actions/command-grader-action@v1
       with:
         test-name: Validate HTML
         setup-command: npm install
@@ -25,7 +24,7 @@ jobs:
         timeout: 10
         max-score: 100
     - name: Autograding Reporter
-      uses: ./.github/actions/reporter-grader-action
+      uses: classroom-resources/autograding-grading-reporter@v1
       env:
         VALIDATE-HTML_RESULTS: "${{steps.validate-html.outputs.result}}"
       with:
